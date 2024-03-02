@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model-deployment
+spec:
+  selector:
+      matchLabels:
+          run: model
+  replicas: 1
+  template:
+      metadata:
+          labels:
+              run: model
+      spec:
+        containers:
+          - name: model-container
+            image: ironwolf1212/mlmodel
+            ports:
+            - containerPort: 8000
