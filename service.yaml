@@ -6,7 +6,6 @@ metadata:
     run: model-service
 spec:   
   type: NodePort
-  externalIPs: [127.0.0.1]
   selector:
     run: model
   ports:
